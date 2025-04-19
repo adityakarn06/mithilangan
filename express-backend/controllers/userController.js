@@ -9,4 +9,12 @@ const SignupUser = async (req,res) => {
 
 }
 
-export {loginUser, SignupUser}
+const updateUser = async (req,res) => {
+
+}
+
+const getAllUser = async (req,res) => {
+
+}
+
+export {loginUser, SignupUser, updateUser, getAllUser}
