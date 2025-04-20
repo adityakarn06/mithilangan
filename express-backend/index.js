@@ -1,11 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const { default: userRouter } = require('./routes/userRouter');
-const { default: cartRouter } = require('./routes/cartRoute');
-const { default: orderRouter } = require('./routes/orderRoute');
-const { default: adminRouter } = require('./routes/adminRoute');
-const { default: productRouter } = require('./routes/productRoute');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import userRouter from './routes/userRouter.js';
+import productRouter from './routes/productRoute.js';
+import cartRouter from './routes/cartRoute.js';
+// import orderRouter from './routes/orderRoute.js';
+// import adminRouter from './routes/adminRoute.js';
+import { connectDB } from './config/db.js';
+
+import "dotenv/config.js"
+const port = process.env.BACKEND_PORT || 5000;
 
 const app = express();
 
@@ -15,10 +18,11 @@ app.use(express.json())
 connectDB(process.env.MONGO_URL);
 
 app.use("/api/v1/user", userRouter);
-app.use("/api/v1/cart", cartRouter);
-app.use("/api/v1/order", orderRouter);
+app.use("/images", express.static("uploads"));  // serving images (http://localhost:5000/images/1737997886706-AdiPic.jpg)
 app.use("/api/v1/product", productRouter);
-app.use("/api/v1/admin", adminRouter);
+app.use("/api/v1/cart", cartRouter);
+// app.use("/api/v1/order", orderRouter);
+// app.use("/api/v1/admin", adminRouter);
 
 
 app.listen(port, () => {

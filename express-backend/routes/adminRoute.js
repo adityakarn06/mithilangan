@@ -1,9 +1,9 @@
-import express from 'express';
-import { adminLogin, adminSignup } from '../controllers/adminController';
+// import express from 'express';
+// import { adminLogin, adminSignup } from '../controllers/adminController';
 
-const adminRouter = express.Router();
+// const adminRouter = express.Router();
 
-adminRouter.post("/signup", adminSignup);
-adminRouter.post("/login", adminLogin);
+// adminRouter.post("/signup", adminSignup);
+// adminRouter.post("/login", adminLogin);
 
-export default adminRouter;
+// export default adminRouter;

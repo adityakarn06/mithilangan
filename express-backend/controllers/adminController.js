@@ -1,11 +1,10 @@
 
+// const adminSignup = async (req, res) => {
 
-const adminSignup = async (req, res) => {
+// }
 
-}
+// const adminLogin = async (req, res) => {
 
-const adminLogin = async (req, res) => {
+// }
 
-}
-
-export { adminSignup, adminLogin };
+// export { adminSignup, adminLogin };
